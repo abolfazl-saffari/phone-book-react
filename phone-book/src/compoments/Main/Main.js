@@ -15,7 +15,25 @@ const Main = () => {
   return (
     <main>
       <Row>
-        <Col xs={8} className="mt-4 mb-2">
+        <Col xs={8} className=" ms-5 mt-4 mb-2">
+          <h1 className="mt-2 mb-4">-Home</h1>
+        </Col>
+        <Col xs={3} className="ms-5 mt-4 mb-4">
+          <Card>
+            <Card.Body>
+              <Card.Text className="d-flex justify-content-between">
+                <span style={{ fontSize: "1.5rem" }}>Abolfazl-drx</span>
+                <Image style={{ width: "2.5rem" }} src={logo} roundedCircle />
+              </Card.Text>
+              <div className="d-grid gap-2">
+                <Button variant="danger"> Logged out</Button>
+              </div>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={8} className=" ms-5 mt-5 mb-3">
           <InputGroup className="mb-1">
             <FormControl
               placeholder="Username..."
@@ -27,30 +45,24 @@ const Main = () => {
             </InputGroup.Text>
           </InputGroup>
         </Col>
-        <Col xs={3} className="ms-5 mt-4 mb-4">
-          <Card>
-            <Card.Body>
-              <Card.Text className="d-flex justify-content-between">
-                <span style={{ fontSize: "1.5rem" }}>Abolfazl-drx</span>
-                <Image style={{ width: "2.5rem" }} src={logo} roundedCircle />
-              </Card.Text>
-              <div className="d-grid gap-2">
-                <Button variant="primary"> Logged out</Button>
-              </div>
-            </Card.Body>
-          </Card>
+        <Col xs={3} className=" ms-5 mt-5 mb-3">
+          <div className="d-grid gap-2">
+            <Button variant="primary">Create new contact</Button>
+          </div>
         </Col>
       </Row>
       <Row className=" my-4">
-        <Col xs={8}>Contact list</Col>
+        <Col className="ms-5" xs={8}>
+          Contact list
+        </Col>
         <Col className="ms-5" xs={3}>
           Contact list overview
         </Col>
       </Row>
       <Row className="p-0">
-        <Col xs={8}>
+        <Col className="ms-5" xs={8}>
           <Scrollbars style={{ height: "40vw" }}>
-            <ListGroup variant="flush" style={{ width: "54vw" }}>
+            <ListGroup variant="flush" style={{ width: "53.5vw" }}>
               <ListGroup.Item className="py-4">Cras justo odio</ListGroup.Item>
               <ListGroup.Item className="py-4">
                 Dapibus ac facilisis in
@@ -124,7 +136,7 @@ const Main = () => {
         </Col>
         <Col className="ms-5" xs={3}>
           <Scrollbars style={{ height: "40vw" }}>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -136,7 +148,7 @@ const Main = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -148,7 +160,7 @@ const Main = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -160,7 +172,7 @@ const Main = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -172,7 +184,7 @@ const Main = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -184,7 +196,7 @@ const Main = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -196,7 +208,7 @@ const Main = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
@@ -208,7 +220,7 @@ const Main = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-            <Card className="my-2" style={{ width: "19vw" }}>
+            <Card className="my-2" style={{ width: "18.5vw" }}>
               <Card.Body>
                 <Card.Title>Card Title</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
