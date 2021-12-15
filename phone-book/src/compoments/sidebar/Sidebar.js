@@ -3,8 +3,8 @@ const Sidebar = () => {
   return (
     <>
       <aside
+        class="d-flex align-items-center d-flex justify-content-center"
         style={{
-          padding: "3vw 3vw",
           height: "100%",
           backgroundColor: "#000",
         }}
