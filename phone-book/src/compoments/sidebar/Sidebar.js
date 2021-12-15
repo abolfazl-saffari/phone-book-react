@@ -1,14 +1,28 @@
-import { ListGroup } from "react-bootstrap";
-import { Image } from "react-bootstrap";
-import drx from "../../img/drx.png";
+import { RiContactsBookFill } from "react-icons/ri";
 const Sidebar = () => {
   return (
     <>
-      <aside>
-        <Image style={{ width: "100%" }} src={drx} />
-        <ListGroup>
-          <ListGroup.Item>Home</ListGroup.Item>
-        </ListGroup>
+      <aside
+        style={{
+          padding: "3vw 3vw",
+          height: "100%",
+          backgroundColor: "#000",
+        }}
+      >
+        <div
+          style={{
+            fontSize: "7vw",
+            color: "#fff",
+            textOrientation: "mixed",
+            writingMode: "vertical-lr",
+            fontWeight: "700",
+            margin: "0",
+            padding: "0",
+          }}
+        >
+          <RiContactsBookFill style={{ margin: "2vw 4vw 2vw 0" }} />
+          Phone-book
+        </div>
       </aside>
     </>
   );

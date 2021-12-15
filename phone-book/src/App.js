@@ -9,7 +9,7 @@ function App() {
       <>
         <Container fluid>
           <Row>
-            <Col style={{ height: "100vh" }} className="p-0" xs={2}>
+            <Col className="p-0" xs={2}>
               <Sidebar />
             </Col>
             <Col className="p-0" xs={10}>

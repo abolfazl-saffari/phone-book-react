@@ -11,9 +11,10 @@ import {
 import logo from "../../img/drx.png";
 import { Scrollbars } from "react-custom-scrollbars";
 import { BiSearchAlt } from "react-icons/bi";
+import { BsFillPersonPlusFill } from "react-icons/bs";
 const Main = () => {
   return (
-    <main>
+    <main style={{ backgroundColor: "" }}>
       <Row>
         <Col xs={8} className=" ms-5 mt-4 mb-2">
           <h1 className="mt-2 mb-4">-Home</h1>
@@ -44,11 +45,6 @@ const Main = () => {
               <BiSearchAlt />
             </InputGroup.Text>
           </InputGroup>
-        </Col>
-        <Col xs={3} className=" ms-5 mt-5 mb-3">
-          <div className="d-grid gap-2">
-            <Button variant="primary">Create new contact</Button>
-          </div>
         </Col>
       </Row>
       <Row className=" my-4">
@@ -233,6 +229,23 @@ const Main = () => {
               </Card.Body>
             </Card>
           </Scrollbars>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div className="d-grid gap-2 mt-5">
+            <Button
+              style={{
+                backgroundColor: "#000",
+                border: "none",
+                borderRadius: "0",
+                fontWeight: "700",
+              }}
+              size="lg"
+            >
+              <BsFillPersonPlusFill style={{ fontSize: "2vw" }} />
+            </Button>
+          </div>
         </Col>
       </Row>
     </main>
