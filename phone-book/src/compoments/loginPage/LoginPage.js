@@ -42,7 +42,7 @@ const LoginPage = () => {
       >
         <OverlayTrigger
           placement="right"
-          delay={{ show: 250, hide: 400 }}
+          delay={{ show: 250, hide: 1000 }}
           overlay={renderTooltip}
         >
           <Image

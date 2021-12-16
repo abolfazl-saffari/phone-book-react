@@ -14,13 +14,12 @@ import { useState } from "react";
 
 function App() {
   const [data, setData] = useState(users);
-  console.log(data);
   return (
     <div className="App">
       {/* <UpdateContact /> */}
-      {/* <AddContact /> */}
+      <AddContact data={data} setData={setData} />
       {/* <LoginPage /> */}
-      <Container fluid>
+      {/* <Container fluid>
         <Row>
           <Col className="p-0" xs={2}>
             <Sidebar />
@@ -29,7 +28,7 @@ function App() {
             <Main data={data} setData={setData} />
           </Col>
         </Row>
-      </Container>
+      </Container> */}
     </div>
   );
 }

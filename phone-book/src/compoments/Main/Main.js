@@ -16,9 +16,17 @@ import { FaUserEdit, FaMale, FaFemale } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
+import { HiUserRemove } from "react-icons/hi";
 import { useEffect, useState } from "react";
 const Main = ({ data, setData }) => {
   const [filter, sefFilter] = useState("");
+  const removeList = (id) => {
+    setData(
+      data.filter((user) => {
+        return user.id !== id;
+      })
+    );
+  };
 
   useEffect(() => {
     document.title = "Phone-book";
@@ -219,6 +227,14 @@ const Main = ({ data, setData }) => {
                             {user.address}
                           </li>
                         </ul>
+                        <HiUserRemove
+                          onClick={() => removeList(user.id)}
+                          style={{
+                            float: "right",
+                            fontSize: "1.5rem",
+                            cursor: "pointer",
+                          }}
+                        />
                       </ListGroup.Item>
                     );
                   })

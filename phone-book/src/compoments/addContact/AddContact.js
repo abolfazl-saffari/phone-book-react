@@ -4,7 +4,44 @@ import image3 from "../../img/avatar.png";
 import { RiContactsBookFill } from "react-icons/ri";
 import { HiUserAdd } from "react-icons/hi";
 import "../addContact/addContact.css";
-const AddContact = () => {
+import { useState } from "react";
+const AddContact = ({ data, setData }) => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    let dataV1 = new FormData(e.target);
+    let name = dataV1.get("name");
+    let lName = dataV1.get("lName");
+    let gender = dataV1.get("gender");
+    let phone = dataV1.get("phone");
+    let emailAddress = dataV1.get("emailAddress");
+    let address = dataV1.get("address");
+    if (
+      name === "" ||
+      lName === "" ||
+      gender === "" ||
+      emailAddress === "" ||
+      address === ""
+    ) {
+      alert("Fill all blank areas ");
+    } else {
+      setData([
+        ...data,
+        {
+          id: data.length + 1,
+          name: name,
+          lName: lName,
+          gender: gender,
+          phone: phone,
+          emailAddress: emailAddress,
+          address: address,
+          photoUrl: `${gender === "Male" ? "Men" : "Women"}`,
+        },
+      ]);
+    }
+    e.target.reset();
+  };
+  console.log(data);
+
   return (
     <div
       style={{
@@ -44,6 +81,7 @@ const AddContact = () => {
         }}
       />
       <Form
+        onSubmit={onSubmit}
         style={{
           display: "block",
           margin: "auto 0",
@@ -64,38 +102,38 @@ const AddContact = () => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label>Name</Form.Label>
-              <Form.Control placeholder="Name" />
+              <Form.Control name="name" placeholder="Name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label>Lastname</Form.Label>
-              <Form.Control placeholder="Lastname" />
+              <Form.Control name="lName" placeholder="Lastname" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label>Gender</Form.Label>
-              <Form.Select aria-label="Default select example">
+              <Form.Select name="gender" aria-label="Default select example">
                 <option>default</option>
-                <option value="1">Female</option>
-                <option value="2">Male</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label>Phone</Form.Label>
-              <Form.Control placeholder="Phone" />
+              <Form.Control name="phone" placeholder="Phone" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control placeholder="Email address" />
+              <Form.Control name="emailAddress" placeholder="Email address" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formGroupEmail">
               <Form.Label>Address</Form.Label>
-              <Form.Control placeholder="Address" />
+              <Form.Control name="address" placeholder="Address" />
             </Form.Group>
           </Col>
         </Row>
         <Button
+          type="submit"
           className="d-flex align-items-center my-4"
           variant="dark"
-          type="submit"
         >
           Add
           <HiUserAdd className="ms-2" />
