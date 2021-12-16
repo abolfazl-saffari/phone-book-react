@@ -34,7 +34,7 @@ const Main = ({ data, setData }) => {
   return (
     <main style={{ backgroundColor: "" }}>
       <Row>
-        <Col xs={8} className=" ms-5 mt-4 mb-2">
+        <Col sm={8} xl={8} className=" ms-5 mt-4 mb-2">
           <h1
             style={{ fontSize: "4rem", color: "#000", fontWeight: "700" }}
             className="mt-2 mb-4"
@@ -42,7 +42,7 @@ const Main = ({ data, setData }) => {
             -Home
           </h1>
         </Col>
-        <Col xs={3} className="ms-5 mt-4 mb-4">
+        <Col sm={6} xl={3} className="ms-5 mt-4 mb-4">
           <Card style={{ backgroundColor: "#000" }}>
             <Card.Body>
               <Card.Text className="d-flex justify-content-between">
@@ -82,7 +82,7 @@ const Main = ({ data, setData }) => {
         </Col>
       </Row>
       <Row>
-        <Col xs={8} className=" ms-5 mt-5 mb-3">
+        <Col sm={10} xl={8} className=" ms-5 mt-5 mb-3">
           <InputGroup
             style={{ border: "1px solid #000", borderRadius: "0.25rem" }}
             className="mb-1"
@@ -112,7 +112,8 @@ const Main = ({ data, setData }) => {
             fontWeight: "700",
           }}
           className="ms-5"
-          xs={8}
+          xs={5}
+          xl={8}
         >
           -Contact list
         </Col>
@@ -123,13 +124,14 @@ const Main = ({ data, setData }) => {
             fontWeight: "700",
           }}
           className="ms-5"
-          xs={3}
+          xs={4}
+          xl={3}
         >
           -Contact list overview
         </Col>
       </Row>
       <Row className="p-0">
-        <Col className="ms-5" xs={8}>
+        <Col className="ms-5" xs={5} xl={8}>
           <Scrollbars style={{ height: "40vw" }}>
             <ListGroup style={{ width: "53.5vw" }}>
               {data.filter(
@@ -199,14 +201,15 @@ const Main = ({ data, setData }) => {
                           <FaUserEdit style={{ cursor: "pointer" }} />
                         </div>
                         <ul
-                          className="mt-4 ms-2"
+                          className="mt-4 ms-2 mb-0"
                           style={{
                             fontWeight: "500",
                             listStyleType: "none",
                             padding: "0",
+                            fontSize: "1.1rem",
                           }}
                         >
-                          <li>
+                          <li className="my-1">
                             {user.gender === "Male" ? (
                               <FaMale className="me-2" />
                             ) : (
@@ -214,17 +217,44 @@ const Main = ({ data, setData }) => {
                             )}
                             {user.gender}
                           </li>
-                          <li>
-                            <BsFillTelephoneFill className="me-2" />
-                            {user.phone}
+                          <li className="my-1">
+                            <a
+                              href={"tel:" + user.phone}
+                              target="_blank"
+                              style={{ textDecoration: "none", color: "#fff" }}
+                              rel="noreferrer"
+                            >
+                              <BsFillTelephoneFill className="me-2" />
+                              {user.phone}
+                            </a>
                           </li>
-                          <li>
-                            <MdAlternateEmail className="me-2" />
-                            {user.emailAddress}
+                          <li className="my-1">
+                            <a
+                              href={"mailto:" + user.emailAddress}
+                              target="_blank"
+                              style={{ textDecoration: "none", color: "#fff" }}
+                              rel="noreferrer"
+                            >
+                              <MdAlternateEmail className="me-2" />
+                              {user.emailAddress}
+                            </a>
                           </li>
-                          <li>
-                            <ImLocation2 className="me-2" />
-                            {user.address}
+                          <li className="my-1">
+                            <a
+                              href={
+                                "https://www.google.com/search?q=" +
+                                user.address +
+                                "&oq=" +
+                                user.address +
+                                "&aqs=chrome.0.0i512j46i512j0i512l2j46i175i199i512j46i512j0i512l2j46i175i199i512j0i512.2908j0j9&sourceid=chrome&ie=UTF-8"
+                              }
+                              target="_blank"
+                              style={{ textDecoration: "none", color: "#fff" }}
+                              rel="noreferrer"
+                            >
+                              <ImLocation2 className="me-2" />
+                              {user.address}
+                            </a>
                           </li>
                         </ul>
                         <HiUserRemove
@@ -242,13 +272,13 @@ const Main = ({ data, setData }) => {
             </ListGroup>
           </Scrollbars>
         </Col>
-        <Col className="ms-5" xs={3}>
+        <Col className="ms-5" xs={5} xl={3}>
           <Scrollbars style={{ height: "40vw" }}>
             {data.map((user) => {
               return (
                 <Card
                   key={user.id}
-                  className="my-2 py-2"
+                  className="mb-2 py-2"
                   style={{
                     width: "18.5vw",
                     backgroundColor: "#000",
@@ -270,8 +300,15 @@ const Main = ({ data, setData }) => {
                       />
                     </Card.Title>
                     <Card.Text style={{ fontSize: "0.75rem" }}>
-                      <BsFillTelephoneFill className="me-2" />
-                      {user.phone}
+                      <a
+                        href={"tel:" + user.phone}
+                        target="_blank"
+                        style={{ textDecoration: "none", color: "#fff" }}
+                        rel="noreferrer"
+                      >
+                        <BsFillTelephoneFill className="me-2" />
+                        {user.phone}
+                      </a>
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -299,8 +336,6 @@ const Main = ({ data, setData }) => {
         </Col>
       </Row>
     </main>
-    // https://robohash.org/img01/?set=set4
-    // for images
   );
 };
 export default Main;
