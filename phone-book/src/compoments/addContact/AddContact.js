@@ -4,7 +4,6 @@ import image3 from "../../img/avatar.png";
 import { RiContactsBookFill } from "react-icons/ri";
 import { HiUserAdd } from "react-icons/hi";
 import "../addContact/addContact.css";
-import { useState } from "react";
 const AddContact = ({ data, setData }) => {
   const onSubmit = (e) => {
     e.preventDefault();

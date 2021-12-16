@@ -1,36 +1,55 @@
 import { Form, Button, Image } from "react-bootstrap";
 import logo from "../../img/squid-game.png";
+import card from "../../img/sq-2.webp";
 import image1 from "../../img/sq-1.jpg";
-import image2 from "../../img/sq-2.webp";
+import image2 from "../../img/sq-4.jpg";
+import image3 from "../../img/sq-5.jpg";
+import image4 from "../../img/sq-6.jpg";
+import image5 from "../../img/sq-7.jpg";
+import image6 from "../../img/sq-8.jpg";
+
 import "../loginPage/loginPage.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 const LoginPage = () => {
-  //   let images = [image1, image2, image3, image4, image5, image6, image7];
-  //   const [state, useState] = [];
-  //   useEffect(() => {
-  //     setInterval(() => {
-  //     }, 1000);
-  //   }, []);
+  const onSunmit = (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    let password = data.get("password");
+    if (Number(password) === 19990201) {
+      return alert("Welcome to you");
+    } else {
+      return alert("Password is wrong please pay attention !");
+    }
+  };
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      <div style={{ fontSize: "0.75rem", fontWeight: "700" }}>
+      <div style={{ fontSize: "1rem", fontWeight: "700" }}>
         <div>19990201</div>
       </div>
     </Tooltip>
   );
   const renderTooltip01 = (props) => (
     <Tooltip id="button-tooltip" {...props}>
-      <div style={{ fontSize: "0.75rem", fontWeight: "700" }}>
-        <span>Find invitaion card !!!</span>
+      <div style={{ fontSize: "1rem", fontWeight: "700" }}>
+        <span>Find the invitaion card !!!</span>
       </div>
     </Tooltip>
   );
+  const gallery = [image1, image2, image3, image4, image5, image6];
+  const [num, setNum] = useState(0);
+  useEffect(() => {
+    setInterval(() => {
+      setNum(Math.floor(Math.random() * 6));
+      console.log(setNum);
+    }, 5000);
+  }, []);
   return (
     <div
       style={{
         display: "flex",
-        backgroundImage: "url(" + image1 + ")",
+        backgroundImage: `url(${gallery[num]})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         minHeight: "100vh",
@@ -42,17 +61,18 @@ const LoginPage = () => {
       >
         <OverlayTrigger
           placement="right"
-          delay={{ show: 250, hide: 1000 }}
+          delay={{ show: 250, hide: 2000 }}
           overlay={renderTooltip}
         >
           <Image
             className="invitationCard"
             style={{ width: "5rem", cursor: "pointer" }}
-            src={image2}
+            src={card}
           />
         </OverlayTrigger>
       </diV>
       <Form
+        onSubmit={onSunmit}
         style={{
           display: "block",
           padding: "2vw",
@@ -81,7 +101,11 @@ const LoginPage = () => {
           <Form.Label style={{ fontSize: "2rem", fontWeight: "700" }}>
             Password :
           </Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control
+            name="password"
+            type="password"
+            placeholder="Password"
+          />
         </Form.Group>
         <Button className="mt-3 mb-1" variant="dark" type="submit">
           I participate in the game

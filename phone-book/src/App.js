@@ -17,8 +17,8 @@ function App() {
   return (
     <div className="App">
       {/* <UpdateContact /> */}
-      <AddContact data={data} setData={setData} />
-      {/* <LoginPage /> */}
+      {/* <AddContact data={data} setData={setData} /> */}
+      <LoginPage />
       {/* <Container fluid>
         <Row>
           <Col className="p-0" xs={2}>
