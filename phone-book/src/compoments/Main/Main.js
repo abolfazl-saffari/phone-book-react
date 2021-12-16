@@ -12,7 +12,17 @@ import logo from "../../img/drx.png";
 import { Scrollbars } from "react-custom-scrollbars";
 import { BiSearchAlt } from "react-icons/bi";
 import { BsFillPersonPlusFill } from "react-icons/bs";
-const Main = () => {
+import { FaUserEdit, FaMale, FaFemale } from "react-icons/fa";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdAlternateEmail } from "react-icons/md";
+import { ImLocation2 } from "react-icons/im";
+import { useEffect, useState } from "react";
+const Main = ({ data, setData }) => {
+  const [filter, sefFilter] = useState("");
+
+  useEffect(() => {
+    document.title = "Phone-book";
+  }, []);
   return (
     <main style={{ backgroundColor: "" }}>
       <Row>
@@ -56,7 +66,6 @@ const Main = () => {
                     fontWeight: "700",
                   }}
                 >
-                  {" "}
                   Logged out
                 </Button>
               </div>
@@ -71,7 +80,10 @@ const Main = () => {
             className="mb-1"
           >
             <FormControl
-              placeholder="Username..."
+              onChange={(e) => {
+                return sefFilter(e.target.value);
+              }}
+              placeholder="What are you looking for ?"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
@@ -87,7 +99,7 @@ const Main = () => {
       <Row className=" my-4">
         <Col
           style={{
-            fontSize: "1.5rem",
+            fontSize: "2rem",
             color: "#000",
             fontWeight: "700",
           }}
@@ -98,7 +110,7 @@ const Main = () => {
         </Col>
         <Col
           style={{
-            fontSize: "1.5rem",
+            fontSize: "2rem",
             color: "#000",
             fontWeight: "700",
           }}
@@ -112,463 +124,143 @@ const Main = () => {
         <Col className="ms-5" xs={8}>
           <Scrollbars style={{ height: "40vw" }}>
             <ListGroup style={{ width: "53.5vw" }}>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Cras justo odio
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Dapibus ac facilisis in
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Morbi leo risus
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Cras justo odio
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Dapibus ac facilisis in
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Morbi leo risus
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Cras justo odio
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Dapibus ac facilisis in
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Morbi leo risus
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4 "
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Cras justo odio
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Dapibus ac facilisis in
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Morbi leo risus
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
-              <ListGroup.Item
-                className="py-4"
-                style={{
-                  backgroundColor: "#000",
-                  border: "1px solid #fff",
-                  color: "#fff",
-                  fontWeight: "700",
-                }}
-              >
-                Porta ac consectetur ac
-              </ListGroup.Item>
+              {data.filter(
+                (user) =>
+                  user.name.toLowerCase().includes(filter.toLowerCase()) ||
+                  user.lName.toLowerCase().includes(filter.toLowerCase()) ||
+                  user.phone.includes(filter) ||
+                  user.address
+                    .toLowerCase()
+                    .includes(filter.toLocaleLowerCase()) ||
+                  user.emailAddress
+                    .toLowerCase()
+                    .includes(filter.toLocaleLowerCase())
+              ).length === 0 ? (
+                <span style={{ fontWeight: "700" }} className="text-center">
+                  No result found for
+                  <span
+                    className="ms-1"
+                    style={{ fontSize: "1.2rem", textDecoration: "underline " }}
+                  >
+                    {filter}
+                  </span>
+                  .
+                </span>
+              ) : (
+                data
+                  .filter(
+                    (user) =>
+                      user.name.toLowerCase().includes(filter.toLowerCase()) ||
+                      user.lName.toLowerCase().includes(filter.toLowerCase()) ||
+                      user.phone.includes(filter) ||
+                      user.address
+                        .toLowerCase()
+                        .includes(filter.toLocaleLowerCase()) ||
+                      user.emailAddress
+                        .toLowerCase()
+                        .includes(filter.toLocaleLowerCase())
+                  )
+                  .map((user) => {
+                    return (
+                      <ListGroup.Item
+                        key={user.id}
+                        className="py-4 mb-1"
+                        style={{
+                          backgroundColor: "#000",
+                          border: "1px solid #fff",
+                          color: "#fff",
+                          borderRadius: "0.5rem",
+                        }}
+                      >
+                        <div
+                          style={{ fontWeight: "700", fontSize: "1.5rem" }}
+                          className=" d-flex justify-content-between"
+                        >
+                          <div>
+                            <Image
+                              src={`https://randomuser.me/api/portraits/${user.photoUrl}/${user.id}.jpg`}
+                              style={{
+                                width: "3rem",
+                                border: "1px solid #fff",
+                              }}
+                              className="me-2"
+                              roundedCircle
+                            />
+                            {user.name} {user.lName}
+                          </div>
+                          <FaUserEdit style={{ cursor: "pointer" }} />
+                        </div>
+                        <ul
+                          className="mt-4 ms-2"
+                          style={{
+                            fontWeight: "500",
+                            listStyleType: "none",
+                            padding: "0",
+                          }}
+                        >
+                          <li>
+                            {user.gender === "Male" ? (
+                              <FaMale className="me-2" />
+                            ) : (
+                              <FaFemale className="me-2" />
+                            )}
+                            {user.gender}
+                          </li>
+                          <li>
+                            <BsFillTelephoneFill className="me-2" />
+                            {user.phone}
+                          </li>
+                          <li>
+                            <MdAlternateEmail className="me-2" />
+                            {user.emailAddress}
+                          </li>
+                          <li>
+                            <ImLocation2 className="me-2" />
+                            {user.address}
+                          </li>
+                        </ul>
+                      </ListGroup.Item>
+                    );
+                  })
+              )}
             </ListGroup>
           </Scrollbars>
         </Col>
         <Col className="ms-5" xs={3}>
           <Scrollbars style={{ height: "40vw" }}>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-            <Card
-              className="my-2"
-              style={{
-                width: "18.5vw",
-                backgroundColor: "#000",
-                color: "#fff",
-                border: "0.5rem",
-                fontWeight: "700",
-              }}
-            >
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            {data.map((user) => {
+              return (
+                <Card
+                  key={user.id}
+                  className="my-2 py-2"
+                  style={{
+                    width: "18.5vw",
+                    backgroundColor: "#000",
+                    color: "#fff",
+                    border: "0.5rem",
+                  }}
+                >
+                  <Card.Body>
+                    <Card.Title style={{ fontWeight: "700" }}>
+                      {user.name} {user.lName}
+                      <Image
+                        src={`https://randomuser.me/api/portraits/${user.photoUrl}/${user.id}.jpg`}
+                        style={{
+                          width: "3rem",
+                          float: "right",
+                          border: "1px solid #fff",
+                        }}
+                        roundedCircle
+                      />
+                    </Card.Title>
+                    <Card.Text style={{ fontSize: "0.75rem" }}>
+                      <BsFillTelephoneFill className="me-2" />
+                      {user.phone}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              );
+            })}
           </Scrollbars>
         </Col>
       </Row>
