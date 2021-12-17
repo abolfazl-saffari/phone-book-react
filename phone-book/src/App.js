@@ -14,9 +14,15 @@ import { useState } from "react";
 
 function App() {
   const [data, setData] = useState(users);
+  const [click, setClick] = useState([]);
   return (
     <div className="App">
-      {/* <UpdateContact /> */}
+      {/* <UpdateContact
+        data={data}
+        setData={setData}
+        click={click}
+        setClick={setClick}
+      /> */}
       {/* <AddContact data={data} setData={setData} /> */}
       {/* <LoginPage /> */}
       <Container fluid>
@@ -25,7 +31,7 @@ function App() {
             <Sidebar />
           </Col>
           <Col className="p-0" xs={10}>
-            <Main data={data} setData={setData} />
+            <Main data={data} setData={setData} setClick={setClick} />
           </Col>
         </Row>
       </Container>

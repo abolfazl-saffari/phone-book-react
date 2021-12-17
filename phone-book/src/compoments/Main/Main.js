@@ -18,7 +18,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
 import { HiUserRemove } from "react-icons/hi";
 import { useEffect, useState } from "react";
-const Main = ({ data, setData }) => {
+const Main = ({ data, setData, setClick }) => {
   const [filter, sefFilter] = useState("");
   const removeList = (id) => {
     setData(
@@ -26,6 +26,9 @@ const Main = ({ data, setData }) => {
         return user.id !== id;
       })
     );
+  };
+  const editHandler = (id, user) => {
+    setClick(user);
   };
 
   useEffect(() => {
@@ -198,7 +201,10 @@ const Main = ({ data, setData }) => {
                             />
                             {user.name} {user.lName}
                           </div>
-                          <FaUserEdit style={{ cursor: "pointer" }} />
+                          <FaUserEdit
+                            onClick={() => editHandler(user.id, user)}
+                            style={{ cursor: "pointer" }}
+                          />
                         </div>
                         <ul
                           className="mt-4 ms-2 mb-0"
