@@ -16,17 +16,10 @@ import { FaUserEdit, FaMale, FaFemale } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
-import { HiUserRemove } from "react-icons/hi";
 import { useEffect, useState } from "react";
+import ModalDelete from "./Modal";
 const Main = ({ data, setData, setClick }) => {
   const [filter, sefFilter] = useState("");
-  const removeList = (id) => {
-    setData(
-      data.filter((user) => {
-        return user.id !== id;
-      })
-    );
-  };
   const editHandler = (id, user) => {
     setClick(user);
   };
@@ -136,7 +129,7 @@ const Main = ({ data, setData, setClick }) => {
       <Row className="p-0">
         <Col className="ms-5" xs={5} xl={8}>
           <Scrollbars style={{ height: "40vw" }}>
-            <ListGroup style={{ width: "53.5vw" }}>
+            <ListGroup style={{ width: "53.5vw", transition: "4s" }}>
               {data.filter(
                 (user) =>
                   user.name.toLowerCase().includes(filter.toLowerCase()) ||
@@ -263,13 +256,10 @@ const Main = ({ data, setData, setClick }) => {
                             </a>
                           </li>
                         </ul>
-                        <HiUserRemove
-                          onClick={() => removeList(user.id)}
-                          style={{
-                            float: "right",
-                            fontSize: "1.5rem",
-                            cursor: "pointer",
-                          }}
+                        <ModalDelete
+                          idDelete={user.id}
+                          data={data}
+                          setData={setData}
                         />
                       </ListGroup.Item>
                     );
