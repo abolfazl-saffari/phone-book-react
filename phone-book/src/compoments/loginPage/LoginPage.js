@@ -11,6 +11,7 @@ import image6 from "../../img/sq-8.jpg";
 import "../loginPage/loginPage.css";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const onSunmit = (e) => {
@@ -107,9 +108,11 @@ const LoginPage = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Button className="mt-3 mb-1" variant="dark" type="submit">
-          I participate in the game
-        </Button>
+        <Link to="/home">
+          <Button className="mt-3 mb-1" variant="dark" type="submit">
+            I participate in the game
+          </Button>
+        </Link>
       </Form>
     </div>
   );

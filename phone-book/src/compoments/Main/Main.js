@@ -18,6 +18,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { ImLocation2 } from "react-icons/im";
 import { useEffect, useState } from "react";
 import ModalDelete from "./Modal";
+import { Link } from "react-router-dom";
 const Main = ({ data, setData, setClick }) => {
   const [filter, sefFilter] = useState("");
   const editHandler = (id, user) => {
@@ -61,17 +62,23 @@ const Main = ({ data, setData, setClick }) => {
                   src={logo}
                 />
               </Card.Text>
-              <div className="d-grid gap-2">
-                <Button
-                  style={{
-                    backgroundColor: "#fff",
-                    color: "#000",
-                    border: "0",
-                    fontWeight: "700",
-                  }}
+              <div>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to="/"
+                  className="d-grid gap-2"
                 >
-                  Logged out
-                </Button>
+                  <Button
+                    style={{
+                      backgroundColor: "#fff",
+                      color: "#000",
+                      border: "0",
+                      fontWeight: "700",
+                    }}
+                  >
+                    Logged out
+                  </Button>
+                </Link>
               </div>
             </Card.Body>
           </Card>
@@ -194,10 +201,15 @@ const Main = ({ data, setData, setClick }) => {
                             />
                             {user.name} {user.lName}
                           </div>
-                          <FaUserEdit
-                            onClick={() => editHandler(user.id, user)}
-                            style={{ cursor: "pointer" }}
-                          />
+                          <Link
+                            to="/updateContact"
+                            style={{ textDecoration: "none", color: "#fff" }}
+                          >
+                            <FaUserEdit
+                              onClick={() => editHandler(user.id, user)}
+                              style={{ cursor: "pointer" }}
+                            />
+                          </Link>
                         </div>
                         <ul
                           className="mt-4 ms-2 mb-0"
@@ -315,20 +327,22 @@ const Main = ({ data, setData, setClick }) => {
       </Row>
       <Row>
         <Col className="ms-5 my-4">
-          <Button
-            style={{
-              backgroundColor: "#000",
-              border: "none",
-              borderRadius: "0.5rem",
-              fontWeight: "700",
-            }}
-          >
-            <BsFillPersonPlusFill
-              className="ms-2"
-              style={{ fontSize: "2vw" }}
-            />
-            <span className="ms-2">Add new contact</span>
-          </Button>
+          <Link to="/addcontact">
+            <Button
+              style={{
+                backgroundColor: "#000",
+                border: "none",
+                borderRadius: "0.5rem",
+                fontWeight: "700",
+              }}
+            >
+              <BsFillPersonPlusFill
+                className="ms-2"
+                style={{ fontSize: "2vw" }}
+              />
+              <span className="ms-2">Add new contact</span>
+            </Button>
+          </Link>
         </Col>
       </Row>
     </main>

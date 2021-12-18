@@ -10,31 +10,51 @@ import {
 import { Container, Row, Col } from "react-bootstrap";
 import users from "./usersData/usersData";
 import { useState } from "react";
-// import { BrowerRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState(users);
   const [click, setClick] = useState([]);
   return (
     <div className="App">
-      {/* <UpdateContact
-        data={data}
-        setData={setData}
-        click={click}
-        setClick={setClick}
-      /> */}
-      {/* <AddContact data={data} setData={setData} /> */}
-      {/* <LoginPage /> */}
-      <Container fluid>
-        <Row>
-          <Col className="p-0" xs={2}>
-            <Sidebar />
-          </Col>
-          <Col className="p-0" xs={10}>
-            <Main data={data} setData={setData} setClick={setClick} />
-          </Col>
-        </Row>
-      </Container>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<LoginPage />} />
+          <Route
+            exact
+            path="/home"
+            element={
+              <Container fluid>
+                <Row>
+                  <Col className="p-0" xs={2}>
+                    <Sidebar />
+                  </Col>
+                  <Col className="p-0" xs={10}>
+                    <Main data={data} setData={setData} setClick={setClick} />
+                  </Col>
+                </Row>
+              </Container>
+            }
+          />
+          <Route
+            exact
+            path="/addcontact"
+            element={<AddContact data={data} setData={setData} />}
+          />
+          <Route
+            exact
+            path="/updateContact"
+            element={
+              <UpdateContact
+                data={data}
+                setData={setData}
+                click={click}
+                setClick={setClick}
+              />
+            }
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
