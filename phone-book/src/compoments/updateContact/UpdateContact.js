@@ -3,6 +3,8 @@ import image1 from "../../img/note-book-ring.png";
 import image3 from "../../img/avatar.png";
 import { RiContactsBookFill } from "react-icons/ri";
 import { FaUserEdit } from "react-icons/fa";
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 const UpdateContact = ({ data, setData, click }) => {
   const [user, setUser] = useState(click);
@@ -135,14 +137,21 @@ const UpdateContact = ({ data, setData, click }) => {
             </Form.Group>
           </Col>
         </Row>
-        <Button
-          className="d-flex align-items-center my-4"
-          variant="dark"
-          type="submit"
-        >
-          Update
-          <FaUserEdit className="ms-2" />
-        </Button>
+        <div className="d-flex align-items-center my-4 justify-content-between">
+          <Link to="/home" style={{ color: "#000" }}>
+            <RiArrowGoBackFill
+              style={{ fontSize: "2rem", cursor: "pointer" }}
+            />
+          </Link>
+          <Button
+            variant="dark"
+            type="submit"
+            className="d-flex align-items-center"
+          >
+            Update
+            <FaUserEdit className="ms-2" />
+          </Button>
+        </div>
       </Form>
     </div>
   );

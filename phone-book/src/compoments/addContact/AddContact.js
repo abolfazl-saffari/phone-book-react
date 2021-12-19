@@ -3,6 +3,8 @@ import image1 from "../../img/note-book-ring.png";
 import image3 from "../../img/avatar.png";
 import { RiContactsBookFill } from "react-icons/ri";
 import { HiUserAdd } from "react-icons/hi";
+import { RiArrowGoBackFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import "../addContact/addContact.css";
 const AddContact = ({ data, setData }) => {
   const onSubmit = (e) => {
@@ -129,14 +131,21 @@ const AddContact = ({ data, setData }) => {
             </Form.Group>
           </Col>
         </Row>
-        <Button
-          type="submit"
-          className="d-flex align-items-center my-4"
-          variant="dark"
-        >
-          Add
-          <HiUserAdd className="ms-2" />
-        </Button>
+        <div className="d-flex align-items-center my-4 justify-content-between">
+          <Link to="/home" style={{ color: "#000" }}>
+            <RiArrowGoBackFill
+              style={{ fontSize: "2rem", cursor: "pointer" }}
+            />
+          </Link>
+          <Button
+            variant="dark"
+            type="submit"
+            className="d-flex align-items-center"
+          >
+            Add
+            <HiUserAdd className="ms-2" />
+          </Button>
+        </div>
       </Form>
     </div>
   );
