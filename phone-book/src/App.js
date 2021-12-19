@@ -38,12 +38,12 @@ function App() {
           />
           <Route
             exact
-            path="/addcontact"
+            path="/home/addcontact"
             element={<AddContact data={data} setData={setData} />}
           />
           <Route
             exact
-            path="/updateContact"
+            path="/home/updateContact"
             element={
               <UpdateContact
                 data={data}

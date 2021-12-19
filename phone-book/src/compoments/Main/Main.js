@@ -202,7 +202,7 @@ const Main = ({ data, setData, setClick }) => {
                             {user.name} {user.lName}
                           </div>
                           <Link
-                            to="/updateContact"
+                            to="/home/updateContact"
                             style={{ textDecoration: "none", color: "#fff" }}
                           >
                             <FaUserEdit
@@ -327,7 +327,7 @@ const Main = ({ data, setData, setClick }) => {
       </Row>
       <Row>
         <Col className="ms-5 my-4">
-          <Link to="/addcontact">
+          <Link to="/home/addcontact">
             <Button
               style={{
                 backgroundColor: "#000",
