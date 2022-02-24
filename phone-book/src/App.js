@@ -17,7 +17,7 @@ function App() {
   const [click, setClick] = useState([]);
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route exact path="/" element={<LoginPage />} />
           <Route
