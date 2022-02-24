@@ -1,5 +1,6 @@
 {
   "homepage": "https://abolfazl-saffari.github.io/phone-book-react",
+  "proxy": "http://localhost:5544",
   "name": "phone-book",
   "version": "0.1.0",
   "private": false,
