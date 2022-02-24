@@ -26,10 +26,10 @@ function App() {
             element={
               <Container fluid>
                 <Row>
-                  <Col className="p-0" xs={2}>
+                  <Col className="p-0" xs={2} sm={2} xl={2}>
                     <Sidebar />
                   </Col>
-                  <Col className="p-0" xs={10}>
+                  <Col className="p-0" xs={10} sm={10} xl={10}>
                     <Main data={data} setData={setData} setClick={setClick} />
                   </Col>
                 </Row>

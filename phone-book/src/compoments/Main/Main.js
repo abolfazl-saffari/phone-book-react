@@ -31,7 +31,8 @@ const Main = ({ data, setData, setClick }) => {
   return (
     <main style={{ backgroundColor: "" }}>
       <Row>
-        <Col sm={8} xl={8} className=" ms-5 mt-4 mb-2">
+        <Col xs={10} sm={6} xl={8} className=" ms-5 mt-4 mb-2">
+          {/* xs={2} sm={2} xl={2} */}
           <h1
             style={{ fontSize: "4rem", color: "#000", fontWeight: "700" }}
             className="mt-2 mb-4"
@@ -39,7 +40,7 @@ const Main = ({ data, setData, setClick }) => {
             -Home
           </h1>
         </Col>
-        <Col sm={6} xl={3} className="ms-5 mt-4 mb-4">
+        <Col xs={10} sm={6} xl={3} className="ms-5 mt-4 mb-4">
           <Card style={{ backgroundColor: "#000" }}>
             <Card.Body>
               <Card.Text className="d-flex justify-content-between">
@@ -85,7 +86,7 @@ const Main = ({ data, setData, setClick }) => {
         </Col>
       </Row>
       <Row>
-        <Col sm={10} xl={8} className=" ms-5 mt-5 mb-3">
+        <Col xs={12} sm={6} xl={8} className=" ms-5 mt-5 mb-3">
           <InputGroup
             style={{ border: "1px solid #000", borderRadius: "0.25rem" }}
             className="mb-1"
@@ -115,7 +116,6 @@ const Main = ({ data, setData, setClick }) => {
             fontWeight: "700",
           }}
           className="ms-5"
-          xs={5}
           xl={8}
         >
           -Contact list
@@ -127,14 +127,13 @@ const Main = ({ data, setData, setClick }) => {
             fontWeight: "700",
           }}
           className="ms-5"
-          xs={4}
           xl={3}
         >
           -Contact list overview
         </Col>
       </Row>
       <Row className="p-0">
-        <Col className="ms-5" xs={5} xl={8}>
+        <Col className="ms-5" xs={12} sm={12} xl={8}>
           <Scrollbars style={{ height: "40vw" }}>
             <ListGroup style={{ width: "53.5vw", transition: "4s" }}>
               {data.filter(
@@ -280,7 +279,7 @@ const Main = ({ data, setData, setClick }) => {
             </ListGroup>
           </Scrollbars>
         </Col>
-        <Col className="ms-5" xs={5} xl={3}>
+        <Col className="ms-5" xs={12} sm={12} xl={3}>
           <Scrollbars style={{ height: "40vw" }}>
             {data.map((user) => {
               return (

@@ -14,16 +14,18 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
+  let valditation;
+  let password;
   const onSunmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
-    let password = data.get("password");
-    if (Number(password) === 19990201) {
-      return alert("Welcome to you");
-    } else {
-      return alert("Password is wrong please pay attention !");
-    }
+    password = data.get("password");
   };
+  if (Number(password) === 19990201) {
+    valditation = true;
+  } else {
+    valditation = false;
+  }
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       <div style={{ fontSize: "1rem", fontWeight: "700" }}>
@@ -108,7 +110,7 @@ const LoginPage = () => {
             placeholder="Password"
           />
         </Form.Group>
-        <Link to="/home">
+        <Link to={"/home"}>
           <Button className="mt-3 mb-1" variant="dark" type="submit">
             I participate in the game
           </Button>
